@@ -1,0 +1,1 @@
+export const VideoUrl = "https://www.youtube.com/watch?v=LXb3EKWsInQ&pp=ygUINGsgdmlkZW8%3D"

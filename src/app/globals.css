@@ -1,26 +1,212 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* =========================
+     Background Colors
+     ========================= */
+  --bg-primary: #ffffff; /* White */
+  --bg-secondary: #e0eefd; /* Light Blue */
+  --bg-tertiary: #cde8ff; /* Pale Blue */
+  --bg-accent: #003559; /* Dark Blue */
+  --bg-accent-hover: #004c7a; /* Darker Blue */
+  --bg-dark: #1f2c34; /* Dark Gray */
+  --bg-light: #fafafa; /* Light Gray */
+  --bg-muted: #f1f2f6; /* Muted Gray */
+
+  /* =========================
+     Text Colors
+     ========================= */
+  --text-primary: #003559; /* Dark Blue */
+  --text-secondary: #6a7275; /* Gray */
+  --text-tertiary: #494c4f; /* Dark Gray */
+  --text-muted: #666666; /* Muted Gray */
+  --text-light: #ffffff; /* White */
+  --text-dark: #000000; /* Black */
+  --text-danger: #ff0000; /* Red */
+  --text-warning: #edba4a; /* Yellow */
+  --text-success: #00b58f; /* Green */
+
+  /* =========================
+     Border & UI Colors
+     ========================= */
+  --border-light: #d9d9d9; /* Light Border */
+  --border-muted: #cdcfce; /* Muted Border */
+  --border-dark: #3a5664; /* Dark Border */
+
+  /* =========================
+     Brand / Accent Colors
+     ========================= */
+  --brand-primary: #003559; /* Primary Brand */
+  --brand-secondary: #004c7a; /* Secondary Brand */
+  --brand-tertiary: #2065a1; /* Tertiary Brand */
+  --brand-info: #5dbae2; /* Info Blue */
+  --brand-cyan: #54ced6; /* Cyan */
+  --brand-teal: #008b94; /* Teal */
+  --brand-green: #8bdb7c; /* Light Green */
+  --brand-green-dark: #00b58f; /* Green */
+  --brand-yellow: #f0c552; /* Yellow */
+
+  /* =========================
+     Font Families
+     ========================= */
+  --font-primary: "Work Sans", sans-serif;
+  --font-secondary: "Inter", sans-serif;
+  --font-tertiary: "Poppins", sans-serif;
+  --font-quaternary: "DM Sans", sans-serif;
+
+  /* =========================
+     Font Sizes
+     ========================= */
+  --font-size-xs: 0.75rem; /* 12px */
+  --font-size-sm: 0.875rem; /* 14px */
+  --font-size-base: 1rem; /* 16px */
+  --font-size-md: 1.125rem; /* 18px */
+  --font-size-lg: 1.25rem; /* 20px */
+  --font-size-xl: 1.5rem; /* 24px */
+  --font-size-2xl: 2rem; /* 32px */
+  --font-size-3xl: 2.25rem; /* 36px */
+  --font-size-4xl: 3.75rem; /* 60px */
+
+  /* =========================
+     Font Weights
+     ========================= */
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --radius: 0.625rem;
+
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@theme {
+  /* =========================
+     Colors
+     ========================= */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-bg-tertiary: var(--bg-tertiary);
+  --color-bg-accent: var(--bg-accent);
+  --color-bg-accent-hover: var(--bg-accent-hover);
+  --color-bg-dark: var(--bg-dark);
+  --color-bg-light: var(--bg-light);
+  --color-bg-muted: var(--bg-muted);
+
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-tertiary: var(--text-tertiary);
+  --color-text-muted: var(--text-muted);
+  --color-text-light: var(--text-light);
+  --color-text-dark: var(--text-dark);
+  --color-text-danger: var(--text-danger);
+  --color-text-warning: var(--text-warning);
+  --color-text-success: var(--text-success);
+
+  --color-border-light: var(--border-light);
+  --color-border-muted: var(--border-muted);
+  --color-border-dark: var(--border-dark);
+
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-secondary: var(--brand-secondary);
+  --color-brand-tertiary: var(--brand-tertiary);
+  --color-brand-info: var(--brand-info);
+  --color-brand-cyan: var(--brand-cyan);
+  --color-brand-teal: var(--brand-teal);
+  --color-brand-green: var(--brand-green);
+  --color-brand-green-dark: var(--brand-green-dark);
+  --color-brand-yellow: var(--brand-yellow);
+
+  /* =========================
+     Fonts
+     ========================= */
+
+  --font-sans: var(--font-primary);
+  --font-inter: var(--font-secondary);
+  --font-poppins: var(--font-tertiary);
+  --font-dm: var(--font-quaternary);
+
+  /* =========================
+     Font Sizes
+     ========================= */
+
+  --text-xs: var(--font-size-xs);
+  --text-sm: var(--font-size-sm);
+  --text-base: var(--font-size-base);
+  --text-md: var(--font-size-md);
+  --text-lg: var(--font-size-lg);
+  --text-xl: var(--font-size-xl);
+  --text-2xl: var(--font-size-2xl);
+  --text-3xl: var(--font-size-3xl);
+  --text-4xl: var(--font-size-4xl);
+
+  /* =========================
+     Font Weights
+     ========================= */
+
+  --font-weight-light: var(--font-weight-light);
+  --font-weight-normal: var(--font-weight-regular);
+  --font-weight-medium: var(--font-weight-medium);
+  --font-weight-semibold: var(--font-weight-semibold);
+  --font-weight-bold: var(--font-weight-bold);
+}
+@media screen and (max-width: 420px) {
+  @theme {
+    /* // Spacing */
+    /* --spacing-universal: 0.5rem; 8px */
+  }
+}
+.container {
+  max-width: 1200px;
+}
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+
+  @media (max-width: 768px) {
+    padding-inline: 1.5rem;
+  }
+  @media (max-width: 480px) {
+    padding-inline: 2rem;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  background-color: var(--color-bg-primary);
 }
